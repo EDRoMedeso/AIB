@@ -4,12 +4,12 @@ Love Håkansson 2023-08-23
 #>
 
 # Create a temp directory on the VDI host
-New-Item -ItemType "directory" -Path "c:/temp"
+New-Item -ItemType directory -Path c:/temp
 
 # Downloading and installing AzCopy
-Invoke-WebRequest -Uri "https://aka.ms/downloadazcopy-v10-windows" -OutFile c:\temp\AzCopy.zip
+Invoke-WebRequest -Uri https://aka.ms/downloadazcopy-v10-windows -OutFile c:\temp\AzCopy.zip
 Expand-Archive c:\temp\AzCopy.zip c:\temp\AzCopy
-Get-ChildItem c:\temp\AzCopy\*\azcopy.exe | Move-Item -Destination "C:\temp\AzCopy.exe"
+Get-ChildItem c:\temp\AzCopy\*\azcopy.exe | Move-Item -Destination C:\temp\AzCopy.exe
 
 # Downloading some software from the storage account
 Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('login', '--identity') -Wait
