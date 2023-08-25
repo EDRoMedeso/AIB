@@ -13,10 +13,14 @@ Get-ChildItem c:\temp\AzCopy\*\azcopy.exe | Move-Item -Destination C:\temp\AzCop
 
 # Downloading some software from the storage account
 Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('login', '--identity') -Wait
-Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/*', 'c:\temp') -Wait
+Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/npp.8.5.6.Installer.x64.exe', '--from-to BlobPipe') -RedirectStandardOutput c:\temp\notepadpp.exe -Wait
+Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK1.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\temp\ANSYS2023R2_WINX64_DISK1.iso -Wait
+Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK2.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\temp\ANSYS2023R2_WINX64_DISK2.iso -Wait
+Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK3.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\temp\ANSYS2023R2_WINX64_DISK3.iso -Wait
+Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList 'logout'
 
 # Installing Notepad++
-Start-Process -FilePath c:\temp\npp.8.5.6.Installer.x64.exe -ArgumentList /S -Wait
+Start-Process -FilePath c:\temp\notepadpp.exe -ArgumentList /S -Wait
 
 # Mounting the ANSYS .iso files
 $iso1 = Mount-DiskImage -ImagePath c:/temp/ANSYS2023R2_WINX64_DISK1.iso -StorageType ISO -PassThru
