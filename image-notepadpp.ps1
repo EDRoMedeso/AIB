@@ -4,7 +4,7 @@ Love Håkansson 2023-08-23
 #>
 
 # Create a temp directory on the VDI host
-New-Item -ItemType directory -Path c:/temp
+New-Item -ItemType directory -Path c:\temp
 
 # Downloading and installing AzCopy
 Invoke-WebRequest -Uri https://aka.ms/downloadazcopy-v10-windows -OutFile c:\temp\AzCopy.zip
@@ -13,10 +13,10 @@ Get-ChildItem c:\temp\AzCopy\*\azcopy.exe | Move-Item -Destination C:\temp\AzCop
 
 # Downloading some software from the storage account
 Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('login', '--identity') -Wait
-Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/npp.8.5.6.Installer.x64.exe', 'c:\temp') -Wait
+Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/npp.8.5.6.Installer.x64.exe', '--from-to BlobPipe', '>', 'c:\temp\notepadpp.exe') -Wait
 
 # Installing Notepad++
-Start-Process -FilePath c:\temp\npp.8.5.6.Installer.x64.exe -ArgumentList /S -Wait
+Start-Process -FilePath c:\temp\notepadpp.exe -ArgumentList /S -Wait
 <#
 # Mounting the ANSYS .iso files
 $iso1 = Mount-DiskImage -ImagePath c:/temp/ANSYS2023R2_WINX64_DISK1.iso -StorageType ISO -PassThru
