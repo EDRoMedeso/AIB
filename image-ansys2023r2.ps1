@@ -11,6 +11,8 @@ Invoke-WebRequest -Uri https://aka.ms/downloadazcopy-v10-windows -OutFile c:\tem
 Expand-Archive c:\temp\AzCopy.zip c:\temp\AzCopy
 Get-ChildItem c:\temp\AzCopy\*\azcopy.exe | Move-Item -Destination C:\temp\AzCopy.exe
 
+Get-ChildItem -Path c:\temp
+
 # Downloading some software from the storage account
 Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('login', '--identity') -Wait
 Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/npp.8.5.6.Installer.x64.exe', '--from-to BlobPipe') -RedirectStandardOutput c:\temp\notepadpp.exe -Wait
@@ -18,6 +20,8 @@ Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvd
 Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK2.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\temp\ANSYS2023R2_WINX64_DISK2.iso -Wait
 Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK3.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\temp\ANSYS2023R2_WINX64_DISK3.iso -Wait
 Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList 'logout' -Wait
+
+Get-ChildItem -Path c:\temp
 
 # Installing Notepad++
 Start-Process -FilePath c:\temp\notepadpp.exe -ArgumentList /S -Wait
