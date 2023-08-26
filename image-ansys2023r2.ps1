@@ -45,6 +45,7 @@ Start-Process -FilePath $cmd -ArgumentList $argList -Wait
 Dismount-DiskImage -ImagePath c:\temp\ANSYS2023R2_WINX64_DISK1.iso
 Dismount-DiskImage -ImagePath c:\temp\ANSYS2023R2_WINX64_DISK2.iso
 Dismount-DiskImage -ImagePath c:\temp\ANSYS2023R2_WINX64_DISK3.iso
-#>
+
 # Removing the entire c:\temp folder
 Remove-Item c:\temp\ -Recurse
+#>
