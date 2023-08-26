@@ -37,7 +37,7 @@ $cmd = $drive1 + ':\\setup.exe'
 $argList = @('-silent', '-fluent', '-spaceclaim', '-optislang', '-media_dir2', $dir2, '-media_dir3', $dir3, '-licserverinfo', '2325:1055:rescale-license')
 
 # Installing ANSYS
-Start-Process -FilePath $cmd -ArgumentList $argList -Wait
+# Start-Process -FilePath $cmd -ArgumentList $argList -Wait
 
 # Unmounting the .iso files
 Dismount-DiskImage -ImagePath c:\temp\ANSYS2023R2_WINX64_DISK1.iso
