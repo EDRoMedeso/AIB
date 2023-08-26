@@ -19,7 +19,6 @@ Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvd
 Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK1.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\temp\ANSYS2023R2_WINX64_DISK1.iso -Wait
 Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK2.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\temp\ANSYS2023R2_WINX64_DISK2.iso -Wait
 Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK3.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\temp\ANSYS2023R2_WINX64_DISK3.iso -Wait
-Start-Process -FilePath C:\temp\AzCopy.exe -ArgumentList 'logout' -Wait
 
 Get-ChildItem -Path c:\temp
 
