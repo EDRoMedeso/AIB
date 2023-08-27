@@ -45,4 +45,4 @@ Start-Process -FilePath c:\edrm\notepadpp.exe -ArgumentList /S -Wait
 #Dismount-DiskImage -ImagePath c:\edrm\ANSYS2023R2_WINX64_DISK3.iso
 
 # Removing the entire c:\edrm folder
-Remove-Item c:\edrm\ -Recurse
+#Remove-Item c:\edrm\ -Recurse
