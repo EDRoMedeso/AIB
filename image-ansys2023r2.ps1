@@ -23,10 +23,10 @@ Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList @('cp', 'https://strgvd
 Start-Process -FilePath c:\edrm\notepadpp.exe -ArgumentList /S -Wait
 
 # Mounting the ANSYS .iso files
-$iso1 = Mount-DiskImage -ImagePath c:\edrm\ANSYS2023R2_WINX64_DISK1.iso -StorageType ISO -PassThru
+#$iso1 = Mount-DiskImage -ImagePath c:\edrm\ANSYS2023R2_WINX64_DISK1.iso -StorageType ISO -PassThru
 #$iso2 = Mount-DiskImage -ImagePath c:\edrm\ANSYS2023R2_WINX64_DISK2.iso -StorageType ISO -PassThru
 #$iso3 = Mount-DiskImage -ImagePath c:\edrm\ANSYS2023R2_WINX64_DISK3.iso -StorageType ISO -PassThru
-$drive1 = ($iso1 | Get-Volume).DriveLetter
+#$drive1 = ($iso1 | Get-Volume).DriveLetter
 #$drive2 = ($iso2 | Get-Volume).DriveLetter
 #$drive3 = ($iso3 | Get-Volume).DriveLetter
 
@@ -40,7 +40,7 @@ $drive1 = ($iso1 | Get-Volume).DriveLetter
 #Start-Process -FilePath $cmd -ArgumentList $argList -Wait
 
 # Unmounting the .iso files
-Dismount-DiskImage -ImagePath c:\edrm\ANSYS2023R2_WINX64_DISK1.iso
+#Dismount-DiskImage -ImagePath c:\edrm\ANSYS2023R2_WINX64_DISK1.iso
 #Dismount-DiskImage -ImagePath c:\edrm\ANSYS2023R2_WINX64_DISK2.iso
 #Dismount-DiskImage -ImagePath c:\edrm\ANSYS2023R2_WINX64_DISK3.iso
 
