@@ -14,7 +14,7 @@ Get-ChildItem c:\edrm\AzCopy\*\azcopy.exe | Move-Item -Destination C:\edrm\AzCop
 # Downloading some software from the storage account
 Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList @('login', '--identity') -Wait
 Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/npp.8.5.6.Installer.x64.exe', '--from-to BlobPipe') -RedirectStandardOutput c:\edrm\notepadpp.exe -Wait
-Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK1.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\edrm\ANSYS2023R2_WINX64_DISK1.iso -Wait
+#Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK1.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\edrm\ANSYS2023R2_WINX64_DISK1.iso -Wait
 #Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK2.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\edrm\ANSYS2023R2_WINX64_DISK2.iso -Wait
 #Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/ANSYS2023R2_WINX64_DISK3.iso', '--from-to BlobPipe') -RedirectStandardOutput c:\edrm\ANSYS2023R2_WINX64_DISK3.iso -Wait
 #Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList 'logout' -Wait
