@@ -13,9 +13,8 @@ Get-ChildItem c:\edrm\AzCopy\*\azcopy.exe | Move-Item -Destination C:\edrm\AzCop
 
 # Fetching the password file for the 'imageInstall' account on \\spark
 Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList @('login', '--identity') -Wait
-Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList @('cp', 'https://strgvdi.blob.core.windows.net/image-software/npp.8.5.6.Installer.x64.exe', '--from-to BlobPipe') 
-                                                           
-                                                           Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList 'logout' -Wait
+Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList @('cp', 'https://strgedrm.file.core.windows.net/imagebuilder/password.txt', 'c:\edr\password.txt) -Wait
+Start-Process -FilePath C:\edrm\AzCopy.exe -ArgumentList 'logout' -Wait
 
 # Installing Notepad++
 Start-Process -FilePath c:\edrm\notepadpp.exe -ArgumentList /S -Wait
