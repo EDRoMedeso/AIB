@@ -16,6 +16,7 @@ $argList = @('-silent', '-config', '-soundsas', '-discovery', '-spaceclaim', '-i
 '-lsdyna', '-mechapdl', '-motion', '-sherlock')
 
 # Installing prerequisites, .NET, and configuring products
+$env:SEE_MASK_NOZONECHECKS = 1
 Start-Process -FilePath "\\spark.internal.edrm\ansys inc\v232\ProductConfig.exe" -ArgumentList @('-silent', '-prereqs') -Wait
 Start-Process -FilePath "\\spark.internal.edrm\ansys inc\v232\ProductConfig.exe" -ArgumentList @('-silent', '-caspol') -Wait
 Start-Process -FilePath "\\spark.internal.edrm\ansys inc\v232\ProductConfig.exe" -ArgumentList $argList -Wait
