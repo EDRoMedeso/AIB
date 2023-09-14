@@ -3,7 +3,7 @@ Script for running ProductConfig.exe on the VDI hosts during build
 Love Håkansson 2023-09-13
 #>
 
-# Fetching the password file for the 'imageInstall' account on \\spark and connecting to the share
+# Fetching the password for the 'imageInstall' account on \\spark and connecting to the share
 Connect-AzAccount -Identity
 $username = 'spark.internal.edrm\imageinstall'
 $password = (Get-AzKeyVaultSecret -VaultName kvedrm -Name imageBuilderPassWordSpark -AsPlainText) | ConvertTo-SecureString -AsPlainText -Force
