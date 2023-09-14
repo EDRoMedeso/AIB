@@ -6,9 +6,9 @@ Love Håkansson 2023-09-13
 # Fetching the password file for the 'imageInstall' account on \\spark
 Connect-AzAccount -Identity
 $username = 'spark.internal.edrm\imageinstall'
-$password = Get-AzKeyVaultSecret -VaultName kvedrm -Name imageBuilderPassWordSpark -AsPlainText
-$spassword = ConvertTo-SecureString $password -AsPlainText -Force
-$credential = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $spassword
+$password = (Get-AzKeyVaultSecret -VaultName kvedrm -Name imageBuilderPassWordSpark -AsPlainText) | ConvertTo-SecureString -AsPlainText -Force
+# $spassword = ConvertTo-SecureString $password -AsPlainText -Force
+$credential = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $password
 
 $argList = @('-silent', '-config', '-soundsas', '-discovery', '-spaceclaim', '-icepak', '-cfx', '-chemkinpro', '-ensight', '-fensapice', '-fluent', '-forte',
 '-icemcfd', '-mfl', '-polyflow', '-reactionwb', '-turbogrid', '-speos', '-speoshpc', '-optislang', '-additive', '-aqwa', '-autodyn', '-ansyscust',
