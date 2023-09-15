@@ -20,3 +20,6 @@ $env:SEE_MASK_NOZONECHECKS = 1
 Start-Process -FilePath "\\spark.internal.edrm\ansys inc\v232\ProductConfig.exe" -ArgumentList @('-silent', '-prereqs') -Wait
 Start-Process -FilePath "\\spark.internal.edrm\ansys inc\v232\ProductConfig.exe" -ArgumentList @('-silent', '-caspol') -Wait
 Start-Process -FilePath "\\spark.internal.edrm\ansys inc\v232\ProductConfig.exe" -ArgumentList $argList -Wait
+
+# Installing the HPC Pack Client utilities
+Start-Process -FilePath "\\spark.internal.edrm\reminst\setup.exe" -ArgumentList @('/Unattend', '/Client') -Wait
