@@ -17,7 +17,7 @@ New-PSDrive -Name "Z" -PSProvider "FileSystem" -Root "\\spark\ansys inc" -Creden
 # Building the command line for Ansys ProductConfig
 $argList = @('-silent', '-config', '-soundsas', '-discovery', '-spaceclaim', '-icepak', '-cfx', '-chemkinpro', '-ensight', '-fensapice', '-fluent', '-forte',
 '-icemcfd', '-mfl', '-polyflow', '-reactionwb', '-turbogrid', '-speos', '-speoshpc', '-optislang', '-additive', '-aqwa', '-autodyn', '-ansyscust',
-'-lsdyna', '-mechapdl', '-motion', '-sherlock')
+'-lsdyna', '-mechapdl', '-motion', '-sherlock', '-scdm_config')
 
 # Installing prerequisites, .NET, and configuring products
 $env:SEE_MASK_NOZONECHECKS = 1
