@@ -1,7 +1,7 @@
 <#
 Script for running ProductConfig.exe on the VDI hosts during build
-ANSYS 2022R2, 2023R1, and 2023R2
-Love Håkansson 2023-09-13, 2023-10-10
+ANSYS 2022R2, 2023R1, 2023R2 and 2024R1
+Love Håkansson 2023-09-13, 2023-10-10, 2024-01-20
 #>
 
 # Adding the DNS suffix to get the ANSYS path correct
@@ -21,11 +21,12 @@ $argList = @('-silent', '-config', '-soundsas', '-discovery', '-spaceclaim', '-i
 
 # Installing prerequisites, .NET, and configuring products
 $env:SEE_MASK_NOZONECHECKS = 1
-Start-Process -FilePath "\\spark\ansys inc\v232\ProductConfig.exe" -ArgumentList @('-silent', '-prereqs') -Wait
-Start-Process -FilePath "\\spark\ansys inc\v232\ProductConfig.exe" -ArgumentList @('-silent', '-caspol') -Wait
+Start-Process -FilePath "\\spark\ansys inc\v241\ProductConfig.exe" -ArgumentList @('-silent', '-prereqs') -Wait
+Start-Process -FilePath "\\spark\ansys inc\v241\ProductConfig.exe" -ArgumentList @('-silent', '-caspol') -Wait
 Start-Process -FilePath "\\spark\ansys inc\v222\ProductConfig.exe" -ArgumentList $argList -Wait
 Start-Process -FilePath "\\spark\ansys inc\v231\ProductConfig.exe" -ArgumentList $argList -Wait
 Start-Process -FilePath "\\spark\ansys inc\v232\ProductConfig.exe" -ArgumentList $argList -Wait
+Start-Process -FilePath "\\spark\ansys inc\v241\ProductConfig.exe" -ArgumentList $argList -Wait
 
 # Installing the HPC Pack Client utilities
 Start-Process -FilePath "\\spark\reminst\setup.exe" -ArgumentList @('/Unattend', '/Client') -Wait
