@@ -1,7 +1,7 @@
 <#
 Script for running ProductConfig.exe on the VDI hosts during build
-ANSYS 2024R1, 2024R2 and 2025R1
-Love Håkansson 2023-09-13, 2023-10-10, 2024-01-20, 2024-09-10, 2025-01-21
+ANSYS 2024R1, 2024R2, 2025R1 and 2025R2
+Love Håkansson 2023-09-13, 2023-10-10, 2024-01-20, 2024-09-10, 2025-01-21, 2025-08-06
 #>
 
 # Adding the DNS suffix to get the ANSYS path correct
@@ -15,15 +15,13 @@ $credential = New-Object -Typename System.Management.Automation.PSCredential -Ar
 New-PSDrive -Name "Z" -PSProvider "FileSystem" -Root "\\spark\ansys inc" -Credential $credential
 
 # Building the command line for Ansys ProductConfig
-$argList = @('-silent', '-config', '-soundsas', '-discovery', '-spaceclaim', '-icepak', '-cfx', '-chemkinpro', '-ensight', '-fensapice', '-fluent', '-forte',
+$argList = @('-silent', '-config', '-discovery', '-spaceclaim', '-icepak', '-cfx', '-chemkin', '-ensight', '-fensapice', '-fluent', '-forte',
 '-icemcfd', '-mfl', '-polyflow', '-reactionwb', '-turbogrid', '-speos', '-speoshpc', '-optislang', '-additive', '-aqwa', '-autodyn', '-ansyscust',
-'-lsdyna', '-mechapdl', '-motion', '-sherlock', '-scdm_config')
+'-lsdyna', '-mechapdl', '-motion', '-sherlock', '-scdm_config', '-selector', '-blademodeler', '-electromagneticssuite', '-lumerical', '-rocky', '-thermaldesktop', '-zemaxos')
 
 # Installing prerequisites, .NET, and configuring products
 $env:SEE_MASK_NOZONECHECKS = 1
 Start-Process -FilePath "\\spark\ansys inc\v251\ProductConfig.exe" -ArgumentList @('-silent', '-prereqs') -Wait
-Start-Process -FilePath "\\spark\ansys inc\v241\ProductConfig.exe" -ArgumentList $argList -Wait
-Start-Process -FilePath "\\spark\ansys inc\v242\ProductConfig.exe" -ArgumentList $argList -Wait
 Start-Process -FilePath "\\spark\ansys inc\v251\ProductConfig.exe" -ArgumentList @('-silent', '-config') -Wait
 
 # Installing the HPC Pack Client utilities
