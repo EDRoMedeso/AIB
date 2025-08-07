@@ -21,8 +21,8 @@ $argList = @('-silent', '-config', '-discovery', '-spaceclaim', '-icepak', '-cfx
 
 # Installing prerequisites, .NET, and configuring products
 $env:SEE_MASK_NOZONECHECKS = 1
-Start-Process -FilePath "\\spark\ansys inc\v251\ProductConfig.exe" -ArgumentList @('-silent', '-prereqs') -Wait
-Start-Process -FilePath "\\spark\ansys inc\v251\ProductConfig.exe" -ArgumentList @('-silent', '-config') -Wait
+Start-Process -FilePath "\\spark\ansys inc\v252\ProductConfig.exe" -ArgumentList @('-silent', '-prereqs') -Wait
+Start-Process -FilePath "\\spark\ansys inc\v252\ProductConfig.exe" -ArgumentList @('-silent', '-config') -Wait
 
 # Installing the HPC Pack Client utilities
 Start-Process -FilePath "\\spark\reminst\setup.exe" -ArgumentList @('/Unattend', '/Client') -Wait
